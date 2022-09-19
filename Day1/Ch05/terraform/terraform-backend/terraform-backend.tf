@@ -1,17 +1,17 @@
-resource "aws_s3_bucket" "test-s3-tf-state" {
+resource "aws_s3_bucket" "sktwykim-s3-tf-state" {
 
-  bucket = "test-s3-bucket-tfstate"
+  bucket = "sktwykim-s3-bucket-tfstate"
 
   tags = {
-    "Name" = "test-s3-bucket-tfstate"
+    "Name" = "sktwykim-s3-bucket-tfstate"
   }
   
 }
 
-resource "aws_dynamodb_table" "test-ddb-tf-lock" {
+resource "aws_dynamodb_table" "sktwykim-ddb-tf-lock" {
 
-  depends_on   = [aws_s3_bucket.test-s3-tf-state]
-  name         = "test-s3-ddb-tflock"
+  depends_on   = [aws_s3_bucket.sktwykim-s3-tf-state]
+  name         = "sktwykim-s3-ddb-tflock"
   billing_mode = "PAY_PER_REQUEST"
   hash_key     = "LockID"
 
@@ -21,7 +21,7 @@ resource "aws_dynamodb_table" "test-ddb-tf-lock" {
   }
 
   tags = {
-    "Name" = "test-s3-ddb-tflock"
+    "Name" = "sktwykim-s3-ddb-tflock"
   }
 
 }

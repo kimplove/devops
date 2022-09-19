@@ -2,10 +2,10 @@ terraform {
   required_version = ">= 1.0"
 
   backend "s3" {
-    bucket = "test-s3-bucket-tfstate"
+    bucket = "sktwykim-s3-bucket-tfstate"
     key = "terraform.tfstate"
     region = "ap-southeast-1"
-    dynamodb_table = "test-s3-ddb-tflock"
+    dynamodb_table = "sktwykim-s3-ddb-tflock"
     encrypt = "true"
   }
 }
